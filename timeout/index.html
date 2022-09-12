@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomeout</title>
+    <style>
+        #btn{
+            width: 50px;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2> set timeout</h2>
+    <button id="btn" onclick="start()">Start</button>
+    <input type="number" id="t">
+<br/>
+<div>
+    Remaining time is <span id="displayCountDown"></span>
+</div>
+</body>
+<script>
+        let i;
+    function start(){
+        i= parseInt(document.getElementById("t").value);
+        startTimeout();
+        function startTimeout(){
+            i--;
+            document.getElementById("displayCountDown").innerHTML=i;
+            if(i < 0){
+            alert("Countdown Ends");
+            }
+            else{
+            setTimeout(startTimeout, 1000);
+            }
+
+        }
+    }
+               
+</script>
+</html>
